@@ -1,0 +1,8 @@
+<div class="homeContainer">
+   <ng-container>
+       <app-user-list *ngIf="showUserList" [userList]="userList"></app-user-list>
+   </ng-container>
+   <ng-container>
+       <app-new-user *ngIf="showNewUser" (userCreated)="newRegistration()"></app-new-user>
+   </ng-container>
+</div>

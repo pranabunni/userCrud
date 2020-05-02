@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-sm-5 offset-1">
+        <input type="text" class="form-control" id="searchInput" placeholder="Search User By Name">
+    </div>
+</div>
+
+<div class="row tableRow">
+    <div class="col-sm-10 offset-1" *ngIf="userList">
+      <div class="table-responsive tableContainer">
+        <table class="table table-hover table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>phone</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Password</th>
+                <th>Uname</th>  
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rowItem of filterList">
+                  <ng-container *ngIf="rowItem">
+                    <td>{{rowItem.name}}</td>
+                    <td>{{rowItem.dob | date:'MMM d, y'}}</td>
+                    <td>{{rowItem.phone}}</td>
+                    <td>{{rowItem.email}}</td>
+                    <td>{{rowItem.gender}}</td>
+                    <td>{{rowItem.pwd}}</td>
+                    <td>{{rowItem.uname}}</td>
+                  </ng-container>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="text-center" *ngIf="!filterList.length">No Data Found!!!</h3>
+      </div>
+    </div>
+</div>

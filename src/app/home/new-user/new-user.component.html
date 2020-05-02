@@ -1,0 +1,105 @@
+<div class="row">
+    <div class="col-sm-10 offset-1">
+        <div class="">
+            <div class="jumbotron">
+                <h1 class="display-4">New User</h1>
+                <form class="form" [formGroup]="regForm" (ngSubmit)="register()">
+                    <div class="form-group row">
+                        <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" formControlName="gender">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                            <span class="text-danger"
+                            *ngIf="controls.gender.touched && controls.gender.errors?.required">
+                            Gender required
+                        </span>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="name" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-4">
+                            <label for="gender">Title</label>
+                            <select class="form-control" formControlName="title">
+                                <option>Mr</option>
+                                <option>Ms</option>
+                            </select>
+                            <span class="text-danger"
+                            *ngIf="controls.title.touched && controls.title.errors?.required">
+                            Title is required
+                        </span>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="gender" >Fname</label>
+                            <input type="text" formControlName="fname" class="form-control" >
+                            <span class="text-danger"
+                            *ngIf="controls.fname.touched && controls.fname.errors?.required">
+                            Firstname is required
+                        </span>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="gender">Lname</label>
+                            <input type="text" formControlName="lname" class="form-control" >
+                            <span class="text-danger"
+                            *ngIf="controls.lname.touched && controls.lname.errors?.required">
+                            Lastsername is required
+                        </span>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" formControlName="email" class="form-control" id="email">
+                            <span class="text-danger"
+                            *ngIf="controls.email.touched && controls.email.errors?.required">
+                            Email is required
+                        </span>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="uname" class="col-sm-2 col-form-label">Username</label>
+                        <div class="col-sm-10">
+                            <input type="text" formControlName="uname" class="form-control" id="uname">
+                            <span class="text-danger"
+                            *ngIf="controls.uname.touched && controls.uname.errors?.required">
+                            Username is required
+                        </span>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="pwd" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" formControlName="pwd" class="form-control" id="pwd">
+                            <span class="text-danger"
+                            *ngIf="controls.pwd.touched && controls.pwd.errors?.required">
+                            Password is required
+                        </span>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="date" class="col-sm-2 col-form-label">DOB</label>
+                        <div class="col-sm-10">
+                            <input type="date" formControlName="dob" class="form-control" id="date">
+                            <span class="text-danger"
+                            *ngIf="controls.dob.touched && controls.dob.errors?.required">
+                            Dob is required
+                        </span>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label">Phone</label>
+                        <div class="col-sm-10">
+                            <input type="text" formControlName="phone" class="form-control" id="phone">
+                            <span class="text-danger"
+                            *ngIf="controls.phone.touched && controls.phone.errors?.required">
+                            Phone is required
+                        </span>
+                        </div>
+                      </div>
+                    <button type="submit"  class="btn btn-primary" [disabled]="regForm.invalid">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
